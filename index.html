@@ -27,20 +27,32 @@
 </head>
 
 <body>
+
+    <!--* HEADER -->
     <header>
         <h1 class="text-uppercase">Gioco dei dadi e Finta Login</h1>
     </header>
-    <main class="container">
-        <section id="section-dadi" class="border text-center container py-3">
+
+    <!--* MAIN -->
+    <main>
+
+        <!--# SECTION DADI -->
+        <section id="section-dadi" class="border rounded-2 text-center container py-3">
+
             <h2>ESERCIZIO 1 - Gioco dei dadi</h2>
+
             <div class="row">
 
+                <!--| GIOCATORE -->
                 <div class="col-6">
+
                     <div class="card my-3">
                         <h3 class="color-blue">Giocatore</h3>
+
                         <div class="img-box my-3">
                             <i class="fas fa-dice fa-3x color-blue"></i>
                         </div>
+
                         <div class="m-3 d-none" id="user-box">
                             <h4>Il giocatore ha tirato</h4>
                             <div id="user-dice" class="h2 color-blue">
@@ -50,12 +62,16 @@
 
                 </div>
 
+                <!--| COMPUTER -->
                 <div class="col-6">
+
                     <div class="card my-3">
                         <h3 class="color-red">CPU</h3>
+
                         <div class="img-box my-3">
                             <i class="fas fa-dice fa-3x color-red"></i>
                         </div>
+
                         <div class="m-3 d-none" id="cpu-box">
                             <h4>Il computer ha tirato</h4>
                             <div id="cpu-dice" class="h2 color-red">
@@ -63,16 +79,22 @@
                         </div>
                     </div>
                 </div>
+
+                <!--| RISULTATO -->
                 <div class="col d-none" id="result-box">
                     <div class="card">
                         <h4 id="result-element" class="my-3">.</h4>
                     </div>
                 </div>
             </div>
+
+            <!--| BOTTONE TIRA I DADI -->
             <button type="button" id="rolldice" class="btn btn-dark my-3">Tira i dadi</button>
+
         </section>
 
-        <section id="section-login" class="border">
+        <!--# SECTION EMAIL -->
+        <section id="section-login" class="border rounded-2 text-center container py-3">
             <h2>ESERCIZIO 2 - Finta Login</h2>
         </section>
     </main>
