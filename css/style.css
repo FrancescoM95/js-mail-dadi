@@ -1,3 +1,5 @@
+/** GENERICS */
+
 body {
     background-color: #a3a3a3;
 }
@@ -9,8 +11,11 @@ h2 {
 }
 
 section {
-    margin-top: 50px;
+    margin-top: 20px;
+    text-align: center;
 }
+
+/** UTILS */
 
 .color-red {
     color: red;
@@ -18,4 +23,8 @@ section {
 
 .color-blue {
     color: blue;
+}
+
+.color-green {
+    color: green;
 }

@@ -37,7 +37,7 @@
     <main>
 
         <!--# SECTION DADI -->
-        <section id="section-dadi" class="border rounded-2 text-center container py-3">
+        <section id="section-dadi" class="container border rounded-2 py-3">
 
             <h2>ESERCIZIO 1 - Gioco dei dadi</h2>
 
@@ -45,11 +45,11 @@
 
                 <!--| GIOCATORE -->
                 <div class="col-6">
-
                     <div class="card my-3">
+
                         <h3 class="color-blue">Giocatore</h3>
 
-                        <div class="img-box my-3">
+                        <div class="my-3">
                             <i class="fas fa-dice fa-3x color-blue"></i>
                         </div>
 
@@ -64,11 +64,11 @@
 
                 <!--| COMPUTER -->
                 <div class="col-6">
-
                     <div class="card my-3">
+
                         <h3 class="color-red">CPU</h3>
 
-                        <div class="img-box my-3">
+                        <div class="my-3">
                             <i class="fas fa-dice fa-3x color-red"></i>
                         </div>
 
@@ -94,8 +94,17 @@
         </section>
 
         <!--# SECTION EMAIL -->
-        <section id="section-login" class="border rounded-2 text-center container py-3">
+        <section id="section-login" class="container border rounded-2 py-3">
+
             <h2>ESERCIZIO 2 - Finta Login</h2>
+
+            <label for="email">Inserisci la tua email</label>
+            <input type="email" id="email" name="email">
+
+            <button type="button" id="verify" class="btn btn-dark ms-2">Verifica</button>
+            <button type="button" id="reset" class="btn btn-dark">Reset</button>
+
+            <p id="message" class="d-none m-0 pt-3"></p>
         </section>
     </main>
 </body>

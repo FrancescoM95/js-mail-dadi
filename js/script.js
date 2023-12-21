@@ -1,6 +1,9 @@
 console.log('JS OK');
 
 
+//|-------- ESERCIZIO 1 ---------
+
+
 //* INITIAL VARIABLES
 
 // BOTTONE
@@ -19,7 +22,7 @@ const resultElement = document.getElementById('result-element');
 const resultBox = document.getElementById('result-box');
 
 
-//@ AL CLICK SUL BOTTONE
+//@ AL CLICK SUL BOTTONE TIRA I DADI
 buttonRoll.addEventListener('click', function () {
 
     //# RANDOMIZZO UN NUMERO DA 1 A 6 PER IL GIOCATORE
@@ -57,4 +60,69 @@ buttonRoll.addEventListener('click', function () {
     resultBox.classList.remove('d-none');
     userBox.classList.remove('d-none');
     cpuBox.classList.remove('d-none');
+})
+
+
+
+
+
+
+//|-------- ESERCIZIO 2 ---------
+
+
+//* INITIAL VARIABLES
+
+const emailElement = document.getElementById('email');
+const messageElement = document.getElementById('message');
+
+// BOTTONI
+const buttonVerify = document.getElementById('verify');
+const buttonReset = document.getElementById('reset');
+
+
+//* Creo un array con la lista di email autorizzate
+const autorizedEmail = [
+    'blablabla@email.com',
+    'latuaemail@email.com',
+    'emailautorizzata@email.com',
+    'boolean@email.com'
+];
+
+//@ AL CLICK SUL BOTTONE VERIFICA
+buttonVerify.addEventListener('click', function () {
+
+    messageElement.classList.remove('color-red', 'color-green');
+
+    //* Stabilisco una variabile per la email e una per il messaggio
+    let emailFound = false;
+    let message;
+
+    //* Leggo l'email inserita dall'utente
+    let userEmail = emailElement.value;
+    console.log(userEmail);
+
+    //* Controllo tra le email autorizzate presenti nell'array per verificare l'email inserita dall'utente
+    for (let i = 0; i < autorizedEmail.length; i++) {
+        if (userEmail === autorizedEmail[i]) emailFound = true;
+    }
+
+    if (emailFound) {                                 //# SE l'email è presente 
+        message = 'Email autorizzata. Benvenuto!';
+        messageElement.classList.add('color-green');
+    } else {                                         //# OPPURE non è presente  
+        message = 'Spiacenti, l\'accesso non è consentito con questa email.';
+        messageElement.classList.add('color-red');
+    }
+    console.log(message);
+
+    //* Mostro il messaggio in pagina
+    messageElement.innerText = message;
+    messageElement.classList.remove('d-none');
+});
+
+
+//@ AL CLICK SUL BOTTONE RESET
+buttonReset.addEventListener('click', function () {
+    emailElement.value = '';
+    messageElement.classList.add('d-none');
 })
