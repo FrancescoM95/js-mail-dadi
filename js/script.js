@@ -9,11 +9,11 @@ console.log('JS OK');
 // BOTTONE
 const buttonRoll = document.getElementById('rolldice');
 
-// USER
+// GIOCATORE
 const userElement = document.getElementById('user-dice');
 const userBox = document.getElementById('user-box');
 
-// CPU
+// COMPUTER
 const cpuElement = document.getElementById('cpu-dice');
 const cpuBox = document.getElementById('cpu-box');
 
@@ -42,12 +42,12 @@ buttonRoll.addEventListener('click', function () {
     if (userDice > cpuDice) {                           // SE il numero del giocatore è più grande di quello del computer
         result = " Il giocatore ha vinto!";             // Il giocatore vince
         resultElement.classList.remove('color-red');
-        resultElement.classList.add('color-blue');      // Il titolo diventa blu
+        resultElement.classList.add('color-blue');      // Il risultato diventa blu
 
     } else if (cpuDice > userDice) {                   // SE il numero del computer è più grande di quello del giocatore
         result = " Il computer ha vinto!";             // Il computer vince
         resultElement.classList.remove('color-blue');
-        resultElement.classList.add('color-red');     // Il titolo diventa rosso     
+        resultElement.classList.add('color-red');     // Il risultato diventa rosso     
     }
     console.log(result);
 
@@ -57,9 +57,9 @@ buttonRoll.addEventListener('click', function () {
     userElement.innerText = userDice;
     cpuElement.innerText = cpuDice;
     resultElement.innerText = result;
-    resultBox.classList.remove('d-none');
     userBox.classList.remove('d-none');
     cpuBox.classList.remove('d-none');
+    resultBox.classList.remove('d-none');
 })
 
 
@@ -101,8 +101,14 @@ buttonVerify.addEventListener('click', function () {
     let userEmail = emailElement.value;
     console.log(userEmail);
 
+    //! VALIDAZIONE
+    if (!userEmail) {
+        alert('Inserisci una email');
+        return;
+    }
+
     //* Controllo tra le email autorizzate presenti nell'array per verificare l'email inserita dall'utente
-    for (let i = 0; i < autorizedEmail.length; i++) {
+    for (let i = 0; i < autorizedEmail.length && !emailFound; i++) {
         if (userEmail === autorizedEmail[i]) emailFound = true;
     }
 
